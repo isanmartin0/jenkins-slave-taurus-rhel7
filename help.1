@@ -1,0 +1,90 @@
+.TH "TAURUS " "1" " Container Image Pages" "DL Devops Engineering Tools <dldevopsengineeringtools@worldpay.com>" "August 18, 2017" 
+.nh
+.ad l
+
+
+.SH NAME
+.PP
+taurus \- Taurus is an automation\-friendly framework for Continuous Testing
+
+
+.SH DESCRIPTION
+.PP
+The Jenkins slave Taurus image has Taurus installed on top of the OpenShift Jenkins
+slave base image.
+
+.PP
+The taurus image is designed to be run by the atomic command with one of these options:
+
+.PP
+\fB\fCrun\fR
+
+.PP
+Starts the installed container with selected privileges to the host.
+
+.PP
+\fB\fCstop\fR
+
+.PP
+Stops the installed container
+
+.PP
+The container itself consists of:
+
+.PP
+.RS
+
+.nf
+\\\- Jenkins slave RHEL 7 base image
+\\\- OpenJDK 1.8.0
+\\\- Taurus test framework
+
+.fi
+.RE
+
+.PP
+Files added to the container during docker build include: /help.1 and the Dockerfile itself
+
+
+.SH "USAGE"
+.PP
+To use the taurus container, you can run the atomic command with run or stop
+options:
+
+.PP
+To run the taurus container:
+
+.PP
+\fB\fCatomic run taurus\fR
+
+.PP
+To stop the taurus container:
+
+.PP
+\fB\fCatomic stop taurus\fR
+
+
+.SH LABELS
+.PP
+The taurus container includes the following Atomic LABEL settings:
+that \fB\fCatomic\fR command can leverage:
+
+.PP
+\fB\fCRUN\fR
+
+.PP
+LABEL RUN="docker run \-d \-\-name ${NAME} ${IMAGE} \\
+  \-v /etc/machine\-id:/etc/machine\-id:ro \\
+  \-v /etc/localtime:/etc/localtime:ro \\
+  \-e IMAGE=IMAGE \-e NAME=NAME"
+
+.PP
+\fB\fCSTOP\fR
+
+.PP
+LABEL STOP='docker stop ${NAME}'
+
+
+.SH HISTORY
+.PP
+TBC
