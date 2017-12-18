@@ -77,8 +77,6 @@ ENV BASH_ENV /usr/local/bin/scl_enable
 
 # Install Taurus and its dependencies
 RUN yum -y install --setopt=tsflags=nodocs \
-        --enablerepo=rhel-7-server-rpms \
-        --enablerepo=rhel-server-rhscl-7-rpms \
           gcc \
           java-1.8.0-openjdk-headless \
           libxml2-devel \
