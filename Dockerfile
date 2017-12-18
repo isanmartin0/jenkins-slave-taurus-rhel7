@@ -70,10 +70,10 @@ COPY Dockerfile /root/buildinfo/Dockerfile_Jenkins_agent_Taurus
 ENV BASH_ENV /usr/local/bin/scl_enable
 
 # add internal CAs
-RUN curl -k https://github.com/raw/EVO/certs/master/bundle/bundle.pem \
-         -x ${HTTPS_PROXY} \
-         -o /etc/pki/ca-trust/source/anchors/evobanco.local_bundle.pem
-    update-ca-trust
+# RUN curl -k https://github.com/raw/EVO/certs/master/bundle/bundle.pem \
+#         -x ${HTTPS_PROXY} \
+#         -o /etc/pki/ca-trust/source/anchors/evobanco.local_bundle.pem
+#    update-ca-trust
 
 # Install Taurus and its dependencies
 RUN yum -y install --setopt=tsflags=nodocs \
