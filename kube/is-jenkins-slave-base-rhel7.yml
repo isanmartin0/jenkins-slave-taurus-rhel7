@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ImageStream
+metadata:
+  annotations:
+    openshift.io/image.dockerRepositoryCheck: 2017-08-08T10:50:45Z
+  creationTimestamp: null
+  generation: 1
+  name: jenkins-slave-base-rhel7
+spec:
+  tags:
+  - annotations: null
+    from:
+      kind: DockerImage
+      name: registry.access.redhat.com/openshift3/jenkins-slave-base-rhel7
+    generation: 1
+    importPolicy: {}
+    name: latest
+status:
+  dockerImageRepository: ""

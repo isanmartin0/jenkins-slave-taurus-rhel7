@@ -19,7 +19,7 @@ LABEL architecture="x86_64" \
       distribution-scope="private" \
       docker.dockerfile="/root/buildinfo/Dockerfile_Jenkins_agent_Taurus" \
       license="Worldpay" \
-      maintainer=Devops <devops@evobanco.com> \
+      maintainer="Devops <devops@evobanco.com>" \
       name="ci/caas-jenkins-slave-taurus-rhel7" \
       summary="The Jenkins slave Taurus image has Taurus installed \
                on top of the OpenShift Jenkins slave base image." \
